@@ -1,0 +1,16 @@
+;; Mi most a RedHat oktatóanyagos labor gépeit használjuk
+
+[managed_hosts]
+servera.lab.example.com
+serverb.lab.example.com
+serverc.lab.example.com
+serverd.lab.example.com
+
+[utility]
+utility.lab.example.com
+
+[mycomputer]
+workstation.lab.example.com
+
+[gateway]
+bastion.lab.example.com

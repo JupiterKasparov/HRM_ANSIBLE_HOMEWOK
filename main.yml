@@ -1,0 +1,10 @@
+---
+- name: "Main YAML"
+  hosts: managed_hosts
+  tasks:
+    - name: "Task 1"
+        include_role: t1_mount_nfs_share
+    - name "Task 2"
+        include_role: t2_mount_local_disk_fstab
+    - name "Task 3"
+        include_role: t3_force_password_change

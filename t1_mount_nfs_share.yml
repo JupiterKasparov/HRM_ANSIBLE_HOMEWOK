@@ -1,0 +1,20 @@
+---
+- name: 'Task 1 YAML: Mount NFS share'
+  vars:
+    # "NFS read-only megosztás, mindenkinek, dir: /data/marketing/"
+    nfs_share_dir: '/data/marketing'
+    nfs_share_src: '172.25.250.8:/data/marketing' # IP cím az utility szerver címe
+  tasks:
+    - name: do_nfs_share
+    ansible.posix.mount:
+        path: '{{ nfs_share_dir }}'
+        src: '{{ nfs_share_src }}'
+        fstype: nfs
+        opts: ro
+        state: mounted
+    notify:
+    - nfs_share_done
+  handlers:
+    -name: nfs_share_done
+    ansible.builtin.debug:
+        msg: 'NFS share done'
