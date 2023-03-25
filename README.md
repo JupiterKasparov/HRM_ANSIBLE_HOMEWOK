@@ -1,2 +1,2 @@
 # HRM_ANSIBLE_HOMEWOK
-Ansible HomeWork (HRM school subject)
+This is the Ansible homework for HRM subject on PTE, to be viewed by Iványi Péter Prof. Dr., the teacher.
