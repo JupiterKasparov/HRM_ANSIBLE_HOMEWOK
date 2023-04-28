@@ -1,0 +1,20 @@
+---
+# T1 - Mount NFS share
+# TASKS
+- name: 'NFS mount point check'
+  ansible.builtin.file:
+    path: '{{ nfs_share_dir }}'
+    state: directory
+    mode: 0777
+    owner: root
+    group: root
+
+- name: 'NFS share'
+  ansible.posix.mount:
+    path:  '{{ nfs_share_dir }}'
+    src: '{{ nfs_share_src }}'
+    fstype: nfs
+    opts: ro
+    state: mounted
+
+  notify: 'NFS share done'

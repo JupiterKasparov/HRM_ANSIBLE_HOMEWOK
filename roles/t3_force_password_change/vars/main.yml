@@ -1,0 +1,4 @@
+---
+# T3 - Force password change upon login
+# VARS
+passw_change_exempt: 'root'

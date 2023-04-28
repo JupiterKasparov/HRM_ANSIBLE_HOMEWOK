@@ -1,0 +1,6 @@
+---
+# T2 - Mount local disk in fstab
+# HANDLERS
+- name: 'FSTAB mount done'
+  ansible.builtin.debug:
+    msg: 'Task 2 (FSTAB mount) complete!'

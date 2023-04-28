@@ -1,0 +1,16 @@
+---
+# T3 - Force password change upon login
+# TASKS
+- name: 'Query all users'
+  ansible.builtin.getent:
+    database: passwd
+
+- name: 'Force password change'
+  ansible.builtin.user:
+        name: '{{ item }}'
+        command: 'chage -d 0 {{ item }}'
+    loop: '{{ getent_passwd }}'
+    when: item != '{{ passw_change_exempt }}'
+
+  notify: 'Password change done'
+    

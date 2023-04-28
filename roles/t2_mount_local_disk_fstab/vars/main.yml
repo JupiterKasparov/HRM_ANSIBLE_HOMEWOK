@@ -1,0 +1,6 @@
+---
+# T2 - Mount local disk in fstab
+# VARS
+fstab_mount_dir: '/data/dir'
+src_dev: '/dev/vdb'
+src_dev_id: '/dev/vdb1'

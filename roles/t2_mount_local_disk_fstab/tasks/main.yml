@@ -1,0 +1,30 @@
+---
+# T2 - Mount local disk in fstab
+# TASKS
+- name: 'Mount point check'
+  ansible.builtin.file:
+    file: '{{ fstab_mount_dir }}'
+    state: directory
+
+- name: 'Create partition'
+  community.general.parted:
+    device: '{{ src_dev }}'
+    number: 1
+    fs_type: ext4
+    state: present
+
+- name: 'Setup file system'
+  community.general.filesystem:
+    dev: '{{ src_dev_id }}'
+    fstype: ext4
+
+- name: 'Mount partition'
+  ansible.posix.mount:
+    path: '{{ fstab_mount_dir }}'
+    src: '{{ src_dev_id }}'
+    fstype: ext4
+    opts: defaults
+    state: mounted
+
+  notify: 'FSTAB mount done'
+    

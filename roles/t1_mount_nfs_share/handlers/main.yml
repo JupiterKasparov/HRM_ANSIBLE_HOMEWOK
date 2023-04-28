@@ -1,0 +1,6 @@
+---
+# T1 - Mount NFS share
+# HANDLERS
+- name: 'NFS share done'
+  ansible.builtin.debug:
+    msg: 'Task 1 (NFS share) complete!'

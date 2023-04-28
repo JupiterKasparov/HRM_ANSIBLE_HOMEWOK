@@ -1,0 +1,6 @@
+---
+# T3 - Force password change upon login
+# HANDLERS
+- name: 'Password change done'
+  ansible.builtin.debug:
+    msg: 'Task 3 complete! All users will have to change their password upon next login (except root)!'
