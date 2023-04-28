@@ -1,0 +1,16 @@
+;; NOTE: We use the RedHat lab machines from the online Ansible course now...
+
+[managed_hosts]
+servera.lab.example.com
+serverb.lab.example.com
+serverc.lab.example.com
+serverd.lab.example.com
+
+[utility]
+utility.lab.example.com
+
+[mycomputer]
+workstation.lab.example.com
+
+[gateway]
+bastion.lab.example.com

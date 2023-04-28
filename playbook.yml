@@ -1,0 +1,11 @@
+---
+- name: 'Ansible homework Playbook'
+  hosts: managed_hosts
+  roles:
+    - t1_mount_nfs_share
+    - t2_mount_local_disk_fstab
+    - t3_force_password_change
+  tasks:
+    - name: 'Homework done'
+      ansible.builtin.debug:
+        msg: 'All tasks should have been completed by now...'
