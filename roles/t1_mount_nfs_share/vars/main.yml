@@ -1,5 +1,0 @@
----
-# T1 - Mount NFS share
-# VARS
-nfs_share_dir: '/data/marketing'
-nfs_share_src: '172.25.250.8:/data/marketing' # IP cím az utility szerver címe
