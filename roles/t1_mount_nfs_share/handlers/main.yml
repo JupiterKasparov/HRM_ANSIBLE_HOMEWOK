@@ -1,0 +1,7 @@
+---
+# T1 - Mount NFS share
+# HANDLERS
+- name: 'NFS share done'
+  ansible.builtin.service:
+    name: 'nfs-kernel-server'
+    state: reloaded

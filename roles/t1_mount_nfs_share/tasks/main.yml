@@ -1,0 +1,23 @@
+---
+# T1 - NFS share
+# TASKS
+- name: 'NFS install'
+  ansible.builtin.package:
+    name: 'nfs-kernel-server'
+    state: present
+
+- name: 'NFS share directory check'
+  ansible.builtin.file:
+    path: '{{ nfs_share_dir }}'
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: 'NFS export config'
+  ansible.builtin.lineinfile:
+    path: '/etc/exports'
+    line: '{{ nfs_share_dir }} *(ro)'
+    state: present
+
+  notify: 'NFS share done'

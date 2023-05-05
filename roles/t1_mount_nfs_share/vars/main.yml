@@ -1,0 +1,4 @@
+---
+# T1 - Mount NFS share
+# VARS
+nfs_share_dir: '/data/marketing'
